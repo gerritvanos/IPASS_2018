@@ -1,0 +1,11 @@
+*.project
+*.exe
+*.o
+*.bin
+*.elf
+*.ld
+*.map
+*.c
+doxyfile
+html
+latex
