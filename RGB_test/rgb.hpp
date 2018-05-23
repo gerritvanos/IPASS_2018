@@ -11,10 +11,13 @@ class RGB
 	  PWM_lib::PWM_class red;
 	  PWM_lib::PWM_class green;
 	  PWM_lib::PWM_class blue;
-	  int intensity;
+	  float intensity;
+	  int red_intensity;
+	  int green_intensity;
+	  int blue_intensity;
  
    public:
-	   RGB(const int & red_ch_nr, const int & green, const int & blue, const int & intensity );
+	   RGB(const int & red_ch_nr, const int & green_ch_nr, const int & blue_ch_nr, const int & intensity );
 	   void change_color(const char & color);
 	   void change_intensity(const int & new_intensity);
 	   void change_red_intensity(const int & new_red_intensity);

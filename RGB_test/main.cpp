@@ -5,7 +5,7 @@ int main( void ){
    // kill the watchdog
    WDT->WDT_MR = WDT_MR_WDDIS;
    PWM_lib::enable_pwm();
-   auto led1 = RGB_lib::RGB(0,1,2,255);
+   auto led1 = RGB_lib::RGB(0,1,2,100);
 
    
    for(;;){
@@ -16,12 +16,17 @@ int main( void ){
 			led1.change_red_intensity(i);
 			hwlib::wait_ms(100);
 		 }
+		 
+		 for (int i=0;i<100;i++){
+			led1.change_green_intensity(i);
+			hwlib::wait_ms(100);
+		 }
 		 for (int i=0;i<100;i++){
 			led1.change_blue_intensity(i);
 			hwlib::wait_ms(100);
 		 }
-		 for (int i=0;i<100;i++){
-			led1.change_green_intensity(i);
+		 for (int i=100; i>0;i--){
+			led1.change_intensity(i);
 			hwlib::wait_ms(100);
 		 }
 	  }
